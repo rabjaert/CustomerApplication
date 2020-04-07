@@ -1,0 +1,13 @@
+D:\GitHub\CustomerApplication\CustomerApplication\CustomerApplication\bin\Debug\netcoreapp2.2\appsettings.Development.json
+D:\GitHub\CustomerApplication\CustomerApplication\CustomerApplication\bin\Debug\netcoreapp2.2\appsettings.json
+D:\GitHub\CustomerApplication\CustomerApplication\CustomerApplication\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+D:\GitHub\CustomerApplication\CustomerApplication\CustomerApplication\bin\Debug\netcoreapp2.2\CustomerApplication.deps.json
+D:\GitHub\CustomerApplication\CustomerApplication\CustomerApplication\bin\Debug\netcoreapp2.2\CustomerApplication.runtimeconfig.json
+D:\GitHub\CustomerApplication\CustomerApplication\CustomerApplication\bin\Debug\netcoreapp2.2\CustomerApplication.runtimeconfig.dev.json
+D:\GitHub\CustomerApplication\CustomerApplication\CustomerApplication\bin\Debug\netcoreapp2.2\CustomerApplication.dll
+D:\GitHub\CustomerApplication\CustomerApplication\CustomerApplication\obj\Debug\netcoreapp2.2\CustomerApplication.csprojAssemblyReference.cache
+D:\GitHub\CustomerApplication\CustomerApplication\CustomerApplication\obj\Debug\netcoreapp2.2\CustomerApplication.RazorAssemblyInfo.cache
+D:\GitHub\CustomerApplication\CustomerApplication\CustomerApplication\obj\Debug\netcoreapp2.2\CustomerApplication.RazorAssemblyInfo.cs
+D:\GitHub\CustomerApplication\CustomerApplication\CustomerApplication\obj\Debug\netcoreapp2.2\CustomerApplication.AssemblyInfoInputs.cache
+D:\GitHub\CustomerApplication\CustomerApplication\CustomerApplication\obj\Debug\netcoreapp2.2\CustomerApplication.AssemblyInfo.cs
+D:\GitHub\CustomerApplication\CustomerApplication\CustomerApplication\obj\Debug\netcoreapp2.2\CustomerApplication.RazorTargetAssemblyInfo.cache
