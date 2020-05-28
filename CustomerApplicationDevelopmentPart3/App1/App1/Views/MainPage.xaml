@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="App1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Style="{StaticResource PageStyle}"
+    mc:Ignorable="d">
+    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            x:Uid="Main_Title"
+            Style="{StaticResource PageTitleStyle}" />
+        <Grid
+            Grid.Row="1" 
+            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <Button Content="Login" Margin="0,455,0,0" VerticalAlignment="Top" Height="81" Width="308" HorizontalAlignment="Center"/>
+            <TextBox HorizontalAlignment="Left" Margin="804,394,0,0" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" Width="129
+                     "/>
+            <TextBox HorizontalAlignment="Left" Margin="941,394,0,0" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top" Width="129"/>
+            <Button Content="Register" Margin="804,592,0,0" VerticalAlignment="Top" Height="64" Width="274" Click="Button_Click"/>
+            <!--
+                The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
+                Place your content here.
+            -->
+        </Grid>
+    </Grid>
+</Page>
