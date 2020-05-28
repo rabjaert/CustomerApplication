@@ -42,7 +42,7 @@ namespace CustomerApplication.API
 
 
             services.AddDbContext<DataContext>(options =>
-                    options.UseSqlServer(connectionlocaldb));
+                    options.UseSqlServer(connectiondonau));
 
             /*services.AddDbContext<DataContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString(connectionlocaldb)));*/
