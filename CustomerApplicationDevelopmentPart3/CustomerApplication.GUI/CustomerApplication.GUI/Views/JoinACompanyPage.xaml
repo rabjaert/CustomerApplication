@@ -51,13 +51,13 @@
     Width="500"
     Height="300"
     HorizontalAlignment="Center"/>
-        <TextBox x:Name="txtCompanyName" HorizontalAlignment="Center" Margin="0,25,0,0" Width="200" Height="75" FontSize="20" Header="Company name" CornerRadius="6" TextAlignment="Center" PlaceholderText="Company name" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="txtCompanyName_TextChanged"  />
+        <TextBox x:Name="txtCompanyName" HorizontalAlignment="Center" Margin="0,25,0,0" Width="200" Height="75" FontSize="20" Header="Company Name" CornerRadius="6" TextAlignment="Center" PlaceholderText="Company Name" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="txtCompanyName_TextChanged"  />
         <TextBox x:Name="txtCompanyDescription" HorizontalAlignment="Center" Margin="0,25,0,0" Width="200" Height="75" FontSize="20" Header="Description" CornerRadius="6" TextAlignment="Center" PlaceholderText="Description" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="txtCompanyDescription_TextChanged"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Button  Content="Create Company" Margin="0,25,0,0" CornerRadius="6" VerticalAlignment="Top" Width="200" Height="50" Click="BtnCompany" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited"/>
-            <Button  Content="Join company" Margin="10,25,0,0" CornerRadius="6" VerticalAlignment="Top" Width="200" Height="50" Click="BtnJoinCompany" PointerEntered="Button_PointerEntered_1" PointerExited="Button_PointerExited_1"/>
-            <Button  Content="Update company" Margin="10,25,0,0" CornerRadius="6" VerticalAlignment="Top" Width="200" Height="50" Click="BtnUpdateCompany" PointerEntered="Button_PointerEntered_2" PointerExited="Button_PointerExited_2"/>
+            <Button  Content="Join Company" Margin="10,25,0,0" CornerRadius="6" VerticalAlignment="Top" Width="200" Height="50" Click="BtnJoinCompany" PointerEntered="Button_PointerEntered_1" PointerExited="Button_PointerExited_1"/>
+            <Button  Content="Update Company" Margin="10,25,0,0" CornerRadius="6" VerticalAlignment="Top" Width="200" Height="50" Click="BtnUpdateCompany" PointerEntered="Button_PointerEntered_2" PointerExited="Button_PointerExited_2"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
             <TextBlock x:Name="txtExceptionMessage" Margin="10, 40, 0, 0"></TextBlock>

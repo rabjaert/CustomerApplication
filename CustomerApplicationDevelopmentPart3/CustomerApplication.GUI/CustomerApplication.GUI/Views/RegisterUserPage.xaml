@@ -17,8 +17,8 @@
         <TextBox x:Name="txtUserName" HorizontalAlignment="Center" Margin="0,25,0,0" Width="200" Height="75" Header="Username" CornerRadius="6" PlaceholderText="Please type in your username" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="txtUserName_TextChanged"/>
         <PasswordBox x:Name="txtPasswordBox" Header="Password" PlaceholderText="Please type in your password" CornerRadius="6" Width="200" Height="75" HorizontalAlignment="Center" Margin="0,25,0,0"  VerticalAlignment="Top" PasswordChanged="txtPasswordBox_PasswordChanged" />
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="Add employee" Margin="0,25,0,0" Width="200" Height="50" CornerRadius="6" VerticalAlignment="Top" Click="Button_Click" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited"/>
-            <Button Content="Go back" Margin="10,25,0,0" Width="200" Height="50" CornerRadius="6" VerticalAlignment="Top" Click="Button_Click1" PointerEntered="Button_PointerEntered_1" PointerExited="Button_PointerExited_1"/>
+            <Button Content="Add Employee" Margin="0,25,0,0" Width="200" Height="50" CornerRadius="6" VerticalAlignment="Top" Click="Button_Click" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited"/>
+            <Button Content="Go Back" Margin="10,25,0,0" Width="200" Height="50" CornerRadius="6" VerticalAlignment="Top" Click="Button_Click1" PointerEntered="Button_PointerEntered_1" PointerExited="Button_PointerExited_1"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
             <TextBlock x:Name="txtExceptionMessage" Margin="10, 20, 0, 0"></TextBlock>

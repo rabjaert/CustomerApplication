@@ -126,19 +126,19 @@
     <comment>Application description</comment>
   </data>
   <data name="Shell_Main.Content" xml:space="preserve">
-    <value>Main</value>
+    <value>Login Page</value>
     <comment>Navigation view item name for Main</comment>
   </data>
   <data name="Shell_RegisterUser.Content" xml:space="preserve">
-    <value>RegisterUser</value>
+    <value>Registration</value>
     <comment>Navigation view item name for RegisterUser</comment>
   </data>
   <data name="Shell_LoggedIn.Content" xml:space="preserve">
-    <value>LoggedIn</value>
+    <value>User Info</value>
     <comment>Navigation view item name for LoggedIn</comment>
   </data>
   <data name="Shell_JoinACompany.Content" xml:space="preserve">
-    <value>JoinCompany</value>
+    <value>Company Management</value>
     <comment>Navigation view item name for JoinACompany</comment>
   </data>
   <data name="Shell_ViewCompanyInventory.Content" xml:space="preserve">

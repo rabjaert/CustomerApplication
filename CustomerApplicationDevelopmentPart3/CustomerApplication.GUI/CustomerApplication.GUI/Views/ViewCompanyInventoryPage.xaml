@@ -82,8 +82,8 @@
         <Slider x:Name="volumeSlider" Header="Quantity"  Width="200" Margin="0,15,0,0" Minimum="1" Maximum="100"/>
         <DatePicker x:Name="DatePicker" Margin="0,10,0,0" Height="60" Header="Date" HorizontalAlignment="Center"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="Add item to inventory" Margin="0,25,0,0" CornerRadius="6" VerticalAlignment="Top" Width="200" Height="50" Click="Button_AddInventory" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited"/>
-            <Button Content="Delete item" Margin="10,25,0,0" CornerRadius="6" VerticalAlignment="Top" Width="200" Height="50" Click="Button_DeleteInventory" PointerEntered="Button_PointerEntered_1" PointerExited="Button_PointerExited_1"/>
+            <Button Content="Add Item To Inventory" Margin="0,25,0,0" CornerRadius="6" VerticalAlignment="Top" Width="200" Height="50" Click="Button_AddInventory" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited"/>
+            <Button Content="Delete Item" Margin="10,25,0,0" CornerRadius="6" VerticalAlignment="Top" Width="200" Height="50" Click="Button_DeleteInventory" PointerEntered="Button_PointerEntered_1" PointerExited="Button_PointerExited_1"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                 <TextBlock x:Name="txtExceptionMessage" Margin="10, 30, 0, 0"></TextBlock>

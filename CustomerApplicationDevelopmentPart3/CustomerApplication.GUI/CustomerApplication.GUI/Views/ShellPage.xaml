@@ -32,13 +32,13 @@
             Or to use an IconElement instead of a Symbol see https://github.com/Microsoft/WindowsTemplateStudio/blob/master/docs/projectTypes/navigationpane.md
             Edit String/en-US/Resources.resw: Add a menu item title for each page
             -->
-            <winui:NavigationViewItemHeader Content="Hjem"/>
-            <winui:NavigationViewItem x:Uid="Shell_Main" Icon="Home" helpers:NavHelper.NavigateTo="views:MainPage" Content="Main Page" />
-            <winui:NavigationViewItemHeader Content="Diverse functionality"/>
-            <winui:NavigationViewItem x:Uid="Shell_RegisterUser" Icon="Document" helpers:NavHelper.NavigateTo="views:RegisterUserPage" />
-            <winui:NavigationViewItem x:Uid="Shell_LoggedIn" Icon="Document" helpers:NavHelper.NavigateTo="views:LoggedInPage" />
-            <winui:NavigationViewItem x:Uid="Shell_JoinACompany" Icon="Document" helpers:NavHelper.NavigateTo="views:JoinACompanyPage" />
-            <winui:NavigationViewItem x:Uid="Shell_ViewCompanyInventory" Icon="Document" helpers:NavHelper.NavigateTo="views:ViewCompanyInventoryPage" />
+            <winui:NavigationViewItemHeader Content="User Registration"/>
+            <winui:NavigationViewItem x:Uid="Shell_Main" Icon="Permissions" helpers:NavHelper.NavigateTo="views:MainPage" Content="Login Page" />
+            <winui:NavigationViewItem x:Uid="Shell_RegisterUser" Icon="Add" Content="Registration" helpers:NavHelper.NavigateTo="views:RegisterUserPage" />
+            <winui:NavigationViewItemHeader Content="Home"/>
+            <winui:NavigationViewItem x:Uid="Shell_LoggedIn" Icon="ContactInfo" Content="User Info" helpers:NavHelper.NavigateTo="views:LoggedInPage" />
+            <winui:NavigationViewItem x:Uid="Shell_JoinACompany" Icon="AddFriend" Content="Company Management" helpers:NavHelper.NavigateTo="views:JoinACompanyPage" />
+            <winui:NavigationViewItem x:Uid="Shell_ViewCompanyInventory" Icon="List" Content="View Inventory" helpers:NavHelper.NavigateTo="views:ViewCompanyInventoryPage" />
             <winui:NavigationViewItem x:Uid="Shell_ViewEmployeesCompany" Icon="People" Content="View Employees" helpers:NavHelper.NavigateTo="views:ViewEmployeesCompanyPage" />
         </winui:NavigationView.MenuItems>
         <i:Interaction.Behaviors>
