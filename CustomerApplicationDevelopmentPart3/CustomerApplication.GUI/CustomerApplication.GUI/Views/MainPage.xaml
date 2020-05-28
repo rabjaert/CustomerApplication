@@ -9,11 +9,11 @@
 
     <StackPanel Margin="20,300,0,0">
 
-        <TextBox x:Name="txtUserName" HorizontalAlignment="Center" Margin="0,24,0,0" Width="215" Height="75" FontSize="15" CornerRadius="6"  PlaceholderText="Please type in your username" Header="Username" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="txtUserName_TextChanged"/>
-        <PasswordBox x:Name="txtPassword"  HorizontalAlignment="Center" Margin="0,24,0,0" Width="215" FontSize="15" Height="75" CornerRadius="6" PlaceholderText="Please type in your password" Header="Password"  VerticalAlignment="Top" PasswordChanged="txtPassword_PasswordChanged"/>
+        <TextBox x:Name="txtUserName" HorizontalAlignment="Center" Margin="0,24,0,0" Width="215" Height="75" FontSize="15" CornerRadius="6"  PlaceholderText="Please type in your username" Header="Username" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TxtUserName_TextChanged"/>
+        <PasswordBox x:Name="txtPassword"  HorizontalAlignment="Center" Margin="0,24,0,0" Width="215" FontSize="15" Height="75" CornerRadius="6" PlaceholderText="Please type in your password" Header="Password"  VerticalAlignment="Top" PasswordChanged="TxtPassword_PasswordChanged"/>
     
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button  Content="Login" Margin="0,24,0,0"  Width="200" Height="50" CornerRadius="6" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited"  Click="btnLogin"/>
+            <Button  Content="Login" Margin="0,24,0,0"  Width="200" Height="50" CornerRadius="6" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited"  Click="BtnLogin"/>
             <Button Content="Register" Margin="10,24,0,0"  Width="200" Height="50" CornerRadius="6" PointerEntered="Button_PointerEntered_1" PointerExited="Button_PointerExited_1"  Click="Button_Click"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">

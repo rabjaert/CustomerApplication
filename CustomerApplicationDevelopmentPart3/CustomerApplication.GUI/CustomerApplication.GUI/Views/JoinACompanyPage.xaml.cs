@@ -119,7 +119,7 @@ namespace CustomerApplication.GUI.Views
             StringContent convertToStringContent1 = new StringContent(userJson1, Encoding.UTF8, "application/json");
             Uri companyUri1 = new Uri("http://localhost:5000/Users/" + testUser.Id);
 
-            await Data.UpdateUser(companyUri1, convertToStringContent1);
+                await Data.UpdateUser(companyUri1, convertToStringContent1);
 
             Uri companyUri2 = new Uri("http://localhost:5000/Users/" + testUser.Id);
             Employee user = await Data.GetUserAsync<Employee>(companyUri2);
@@ -185,7 +185,7 @@ namespace CustomerApplication.GUI.Views
                 Windows.UI.Xaml.Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Arrow, 1);
             }
 
-            private void txtCompanyName_TextChanged(object sender, TextChangedEventArgs e)
+            private void TxtCompanyName_TextChanged(object sender, TextChangedEventArgs e)
             {
                 validCompanyName = Regex.IsMatch(txtCompanyName.Text, namingPattern);
 
@@ -200,7 +200,7 @@ namespace CustomerApplication.GUI.Views
             }
 
 
-            private void txtCompanyDescription_TextChanged(object sender, TextChangedEventArgs e)
+            private void TxtCompanyDescription_TextChanged(object sender, TextChangedEventArgs e)
             {
                 validDescription = Regex.IsMatch(txtCompanyDescription.Text, namingPattern);
 

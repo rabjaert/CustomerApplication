@@ -51,8 +51,8 @@
     Width="500"
     Height="300"
     HorizontalAlignment="Center"/>
-        <TextBox x:Name="txtCompanyName" HorizontalAlignment="Center" Margin="0,25,0,0" Width="200" Height="75" FontSize="20" Header="Company Name" CornerRadius="6" TextAlignment="Center" PlaceholderText="Company Name" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="txtCompanyName_TextChanged"  />
-        <TextBox x:Name="txtCompanyDescription" HorizontalAlignment="Center" Margin="0,25,0,0" Width="200" Height="75" FontSize="20" Header="Description" CornerRadius="6" TextAlignment="Center" PlaceholderText="Description" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="txtCompanyDescription_TextChanged"/>
+        <TextBox x:Name="txtCompanyName" HorizontalAlignment="Center" Margin="0,25,0,0" Width="200" Height="75" FontSize="20" Header="Company Name" CornerRadius="6" TextAlignment="Center" PlaceholderText="Company Name" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TxtCompanyName_TextChanged"  />
+        <TextBox x:Name="txtCompanyDescription" HorizontalAlignment="Center" Margin="0,25,0,0" Width="200" Height="75" FontSize="20" Header="Description" CornerRadius="6" TextAlignment="Center" PlaceholderText="Description" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TxtCompanyDescription_TextChanged"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Button  Content="Create Company" Margin="0,25,0,0" CornerRadius="6" VerticalAlignment="Top" Width="200" Height="50" Click="BtnCompany" PointerEntered="Button_PointerEntered" PointerExited="Button_PointerExited"/>

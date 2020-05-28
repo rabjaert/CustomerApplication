@@ -21,7 +21,9 @@ namespace CustomerApplication.GUI.Activation
 
         public override async Task HandleAsync(object args)
         {
+#pragma warning disable CA2007 // Consider calling ConfigureAwait on the awaited task
             await HandleInternalAsync(args as T);
+#pragma warning restore CA2007 // Consider calling ConfigureAwait on the awaited task
         }
 
         public override bool CanHandle(object args)

@@ -27,7 +27,9 @@ namespace CustomerApplication.GUI.Activation
             }
 
             NavigationService.Navigate(_navElement, arguments);
+#pragma warning disable CA2007 // Consider calling ConfigureAwait on the awaited task
             await Task.CompletedTask;
+#pragma warning restore CA2007 // Consider calling ConfigureAwait on the awaited task
         }
 
         protected override bool CanHandleInternal(IActivatedEventArgs args)

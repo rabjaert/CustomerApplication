@@ -190,7 +190,7 @@ namespace CustomerApplication.GUI.Core.Datahandler
             catch (HttpRequestException)
             {
                 // Write out any exceptions.
-                return default(T);
+                return default;
             }
         }
 
@@ -244,7 +244,7 @@ namespace CustomerApplication.GUI.Core.Datahandler
 
                 return studentArray;
             }
-            catch (Exception ex) {
+            catch (Exception) {
                 return null;
             }
         }
@@ -270,7 +270,7 @@ namespace CustomerApplication.GUI.Core.Datahandler
 
                 return studentArray;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }

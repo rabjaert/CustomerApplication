@@ -27,12 +27,16 @@ namespace CustomerApplication.GUI.Behaviors
 
         public static NavigationViewHeaderMode GetHeaderMode(Page item)
         {
+#pragma warning disable CA1062 // Validate arguments of public methods
             return (NavigationViewHeaderMode)item.GetValue(HeaderModeProperty);
+#pragma warning restore CA1062 // Validate arguments of public methods
         }
 
         public static void SetHeaderMode(Page item, NavigationViewHeaderMode value)
         {
+#pragma warning disable CA1062 // Validate arguments of public methods
             item.SetValue(HeaderModeProperty, value);
+#pragma warning restore CA1062 // Validate arguments of public methods
         }
 
         public static readonly DependencyProperty HeaderModeProperty =
@@ -40,12 +44,16 @@ namespace CustomerApplication.GUI.Behaviors
 
         public static object GetHeaderContext(Page item)
         {
+#pragma warning disable CA1062 // Validate arguments of public methods
             return item.GetValue(HeaderContextProperty);
+#pragma warning restore CA1062 // Validate arguments of public methods
         }
 
         public static void SetHeaderContext(Page item, object value)
         {
+#pragma warning disable CA1062 // Validate arguments of public methods
             item.SetValue(HeaderContextProperty, value);
+#pragma warning restore CA1062 // Validate arguments of public methods
         }
 
         public static readonly DependencyProperty HeaderContextProperty =
@@ -53,12 +61,16 @@ namespace CustomerApplication.GUI.Behaviors
 
         public static DataTemplate GetHeaderTemplate(Page item)
         {
+#pragma warning disable CA1062 // Validate arguments of public methods
             return (DataTemplate)item.GetValue(HeaderTemplateProperty);
+#pragma warning restore CA1062 // Validate arguments of public methods
         }
 
         public static void SetHeaderTemplate(Page item, DataTemplate value)
         {
+#pragma warning disable CA1062 // Validate arguments of public methods
             item.SetValue(HeaderTemplateProperty, value);
+#pragma warning restore CA1062 // Validate arguments of public methods
         }
 
         public static readonly DependencyProperty HeaderTemplateProperty =

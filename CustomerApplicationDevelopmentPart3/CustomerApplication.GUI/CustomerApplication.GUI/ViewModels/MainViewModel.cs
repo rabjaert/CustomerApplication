@@ -19,7 +19,7 @@ namespace CustomerApplication.GUI.ViewModels
     public class MainViewModel : Observable
     {
         public LoggedInViewModel ViewModel { get; } = new LoggedInViewModel();
-        public ObservableCollection<Employee> Employees { get; set; } = new ObservableCollection<Employee>();
+        public ObservableCollection<Employee> Employees { get; } = new ObservableCollection<Employee>();
 
         public MainViewModel()
         {

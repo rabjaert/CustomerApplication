@@ -9,7 +9,9 @@ namespace CustomerApplication.GUI
 {
     public sealed partial class App : Application
     {
+#pragma warning disable IDE0044 // Add readonly modifier
         private Lazy<ActivationService> _activationService;
+#pragma warning restore IDE0044 // Add readonly modifier
 
         private ActivationService ActivationService
         {
@@ -26,15 +28,21 @@ namespace CustomerApplication.GUI
 
         protected override async void OnLaunched(LaunchActivatedEventArgs args)
         {
+#pragma warning disable CA1062 // Validate arguments of public methods
             if (!args.PrelaunchActivated)
+#pragma warning restore CA1062 // Validate arguments of public methods
             {
+#pragma warning disable CA2007 // Consider calling ConfigureAwait on the awaited task
                 await ActivationService.ActivateAsync(args);
+#pragma warning restore CA2007 // Consider calling ConfigureAwait on the awaited task
             }
         }
 
         protected override async void OnActivated(IActivatedEventArgs args)
         {
+#pragma warning disable CA2007 // Consider calling ConfigureAwait on the awaited task
             await ActivationService.ActivateAsync(args);
+#pragma warning restore CA2007 // Consider calling ConfigureAwait on the awaited task
         }
 
         private ActivationService CreateActivationService()

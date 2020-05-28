@@ -33,18 +33,22 @@ namespace CustomerApplication.GUI.Views
 
         private async void MainPage_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
+#pragma warning disable CA2007 // Consider calling ConfigureAwait on the awaited task
             await ViewModel.CheckForInternetError();
+#pragma warning restore CA2007 // Consider calling ConfigureAwait on the awaited task
         }
 
 
-        private async void btnLogin(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private async void BtnLogin(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             try
             {
                 if (validUsername && validPassword)
                 {
 
+#pragma warning disable CA2007 // Consider calling ConfigureAwait on the awaited task
                     var loginRequest = await ViewModel.LoginUserAsync(txtUserName.Text, txtPassword.Password);
+#pragma warning restore CA2007 // Consider calling ConfigureAwait on the awaited task
 
                     if (loginRequest)
                     {
@@ -97,7 +101,7 @@ namespace CustomerApplication.GUI.Views
             Windows.UI.Xaml.Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Arrow, 1);
         }
 
-        private void txtUserName_TextChanged(object sender, TextChangedEventArgs e)
+        private void TxtUserName_TextChanged(object sender, TextChangedEventArgs e)
         {
             validUsername = Regex.IsMatch(txtUserName.Text, userNamePattern);
 
@@ -111,7 +115,7 @@ namespace CustomerApplication.GUI.Views
                 txtUserName.BorderBrush = new SolidColorBrush(Colors.Green);
         }
 
-        private void txtPassword_PasswordChanged(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private void TxtPassword_PasswordChanged(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             validPassword = Regex.IsMatch(txtPassword.Password, passwordPattern);
 

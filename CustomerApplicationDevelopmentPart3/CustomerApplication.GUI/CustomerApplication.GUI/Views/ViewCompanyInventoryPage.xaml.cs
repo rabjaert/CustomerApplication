@@ -123,7 +123,7 @@ namespace CustomerApplication.GUI.Views
             Windows.UI.Xaml.Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Arrow, 1);
         }
 
-        private void txtItemName_TextChanged(object sender, TextChangedEventArgs e)
+        private void TxtItemName_TextChanged(object sender, TextChangedEventArgs e)
         {
             validInventoryName = Regex.IsMatch(txtItemName.Text, namingPattern);
             if (!validInventoryName)
@@ -137,7 +137,7 @@ namespace CustomerApplication.GUI.Views
             }
         }
 
-        private void txtItemDescription_TextChanged(object sender, TextChangedEventArgs e)
+        private void TxtItemDescription_TextChanged(object sender, TextChangedEventArgs e)
         {
             validDescriptionName = Regex.IsMatch(txtItemDescription.Text, namingPattern);
             if (!validDescriptionName) {

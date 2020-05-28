@@ -12,9 +12,9 @@ namespace CustomerApplication.GUI.ViewModels
     public class CompanyViewModel : Observable
     {
 
-        public ObservableCollection<Company> Companies { get; set; } = new ObservableCollection<Company>();
-        public ObservableCollection<Employee> EmployeeCompanies { get; set; } = new ObservableCollection<Employee>();
-        public ObservableCollection<Inventory> InventoryCompanies { get; set; } = new ObservableCollection<Inventory>();
+        public ObservableCollection<Company> Companies { get; } = new ObservableCollection<Company>();
+        public ObservableCollection<Employee> EmployeeCompanies { get; } = new ObservableCollection<Employee>();
+        public ObservableCollection<Inventory> InventoryCompanies { get; } = new ObservableCollection<Inventory>();
 
         public CompanyViewModel()
         {

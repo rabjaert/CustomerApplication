@@ -15,11 +15,17 @@ namespace CustomerApplication.GUI.Services
     // https://github.com/Microsoft/WindowsTemplateStudio/blob/master/docs/activation.md
     internal class ActivationService
     {
+#pragma warning disable IDE0052 // Remove unread private members
         private readonly App _app;
+#pragma warning restore IDE0052 // Remove unread private members
         private readonly Type _defaultNavItem;
+#pragma warning disable IDE0044 // Add readonly modifier
         private Lazy<UIElement> _shell;
+#pragma warning restore IDE0044 // Add readonly modifier
 
+#pragma warning disable IDE0052 // Remove unread private members
         private object _lastActivationArgs;
+#pragma warning restore IDE0052 // Remove unread private members
 
         public ActivationService(App app, Type defaultNavItem, Lazy<UIElement> shell = null)
         {
@@ -34,7 +40,9 @@ namespace CustomerApplication.GUI.Services
             {
                 // Initialize services that you need before app activation
                 // take into account that the splash screen is shown while this code runs.
+#pragma warning disable CA2007 // Consider calling ConfigureAwait on the awaited task
                 await InitializeAsync();
+#pragma warning restore CA2007 // Consider calling ConfigureAwait on the awaited task
 
                 // Do not repeat app initialization when the Window already has content,
                 // just ensure that the window is active
@@ -47,7 +55,9 @@ namespace CustomerApplication.GUI.Services
 
             // Depending on activationArgs one of ActivationHandlers or DefaultActivationHandler
             // will navigate to the first page
+#pragma warning disable CA2007 // Consider calling ConfigureAwait on the awaited task
             await HandleActivationAsync(activationArgs);
+#pragma warning restore CA2007 // Consider calling ConfigureAwait on the awaited task
             _lastActivationArgs = activationArgs;
 
             if (IsInteractive(activationArgs))
@@ -56,13 +66,17 @@ namespace CustomerApplication.GUI.Services
                 Window.Current.Activate();
 
                 // Tasks after activation
+#pragma warning disable CA2007 // Consider calling ConfigureAwait on the awaited task
                 await StartupAsync();
+#pragma warning restore CA2007 // Consider calling ConfigureAwait on the awaited task
             }
         }
 
         private async Task InitializeAsync()
         {
+#pragma warning disable CA2007 // Consider calling ConfigureAwait on the awaited task
             await Task.CompletedTask;
+#pragma warning restore CA2007 // Consider calling ConfigureAwait on the awaited task
         }
 
         private async Task HandleActivationAsync(object activationArgs)
@@ -72,7 +86,9 @@ namespace CustomerApplication.GUI.Services
 
             if (activationHandler != null)
             {
+#pragma warning disable CA2007 // Consider calling ConfigureAwait on the awaited task
                 await activationHandler.HandleAsync(activationArgs);
+#pragma warning restore CA2007 // Consider calling ConfigureAwait on the awaited task
             }
 
             if (IsInteractive(activationArgs))
@@ -80,14 +96,18 @@ namespace CustomerApplication.GUI.Services
                 var defaultHandler = new DefaultActivationHandler(_defaultNavItem);
                 if (defaultHandler.CanHandle(activationArgs))
                 {
+#pragma warning disable CA2007 // Consider calling ConfigureAwait on the awaited task
                     await defaultHandler.HandleAsync(activationArgs);
+#pragma warning restore CA2007 // Consider calling ConfigureAwait on the awaited task
                 }
             }
         }
 
         private async Task StartupAsync()
         {
+#pragma warning disable CA2007 // Consider calling ConfigureAwait on the awaited task
             await Task.CompletedTask;
+#pragma warning restore CA2007 // Consider calling ConfigureAwait on the awaited task
         }
 
         private IEnumerable<ActivationHandler> GetActivationHandlers()

@@ -13,7 +13,7 @@ namespace CustomerApplication.GUI.ViewModels
 {
     public class RegisterUserViewModel : Observable
     {
-        public ObservableCollection<Employee> Employees { get; set; } = new ObservableCollection<Employee>();
+        public ObservableCollection<Employee> Employees { get; } = new ObservableCollection<Employee>();
         public CompanyViewModel CompanyViewModel { get; } = new CompanyViewModel();
 
         public RegisterUserViewModel()

@@ -129,7 +129,7 @@ namespace CustomerApplication.GUI.Views
             Windows.UI.Xaml.Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Arrow, 1);
         }
 
-        private void txtFirstName_TextChanged(object sender, TextChangedEventArgs e)
+        private void TxtFirstName_TextChanged(object sender, TextChangedEventArgs e)
         {
 
             validFirstname = Regex.IsMatch(txtFirstName.Text, namingPattern);
@@ -146,7 +146,7 @@ namespace CustomerApplication.GUI.Views
 
         }
 
-        private void txtLastName_TextChanged(object sender, TextChangedEventArgs e)
+        private void TxtLastName_TextChanged(object sender, TextChangedEventArgs e)
         {
             validLastname = Regex.IsMatch(txtLastName.Text, namingPattern);
 
@@ -183,7 +183,7 @@ namespace CustomerApplication.GUI.Views
 
         }
 
-        private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)
+        private void TxtEmail_TextChanged(object sender, TextChangedEventArgs e)
         {
             validEmail = Regex.IsMatch(txtEmail.Text, emailPattern);
             if (!validEmail)
@@ -197,7 +197,7 @@ namespace CustomerApplication.GUI.Views
             }
         }
 
-        private void txtUserName_TextChanged(object sender, TextChangedEventArgs e)
+        private void TxtUserName_TextChanged(object sender, TextChangedEventArgs e)
         {
             validUsername = Regex.IsMatch(txtUserName.Text, userNamePattern);
             if (!validUsername)
@@ -216,7 +216,7 @@ namespace CustomerApplication.GUI.Views
 
         }
 
-        private void txtPasswordBox_PasswordChanged(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private void TxtPasswordBox_PasswordChanged(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             validPassword = Regex.IsMatch(txtPasswordBox.Password, passwordPattern);
 

@@ -55,7 +55,9 @@ namespace CustomerApplication.GUI.ViewModels
             NavigationService.Frame = frame;
             NavigationService.NavigationFailed += Frame_NavigationFailed;
             NavigationService.Navigated += Frame_Navigated;
+#pragma warning disable CA1062 // Validate arguments of public methods
             _navigationView.BackRequested += OnBackRequested;
+#pragma warning restore CA1062 // Validate arguments of public methods
         }
 
         private async void OnLoaded()
@@ -64,7 +66,9 @@ namespace CustomerApplication.GUI.ViewModels
             // More info on tracking issue https://github.com/Microsoft/microsoft-ui-xaml/issues/8
             _keyboardAccelerators.Add(_altLeftKeyboardAccelerator);
             _keyboardAccelerators.Add(_backKeyboardAccelerator);
+#pragma warning disable CA2007 // Consider calling ConfigureAwait on the awaited task
             await Task.CompletedTask;
+#pragma warning restore CA2007 // Consider calling ConfigureAwait on the awaited task
         }
 
         private void OnItemInvoked(WinUI.NavigationViewItemInvokedEventArgs args)
