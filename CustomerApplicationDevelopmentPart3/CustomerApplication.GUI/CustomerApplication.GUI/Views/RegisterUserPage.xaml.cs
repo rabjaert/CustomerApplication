@@ -18,24 +18,38 @@ using System.Net;
 
 namespace CustomerApplication.GUI.Views
 {
+    /// <summary></summary>
     public sealed partial class RegisterUserPage : Page
     {
+        /// <summary>Gets the view model.</summary>
+        /// <value>The view model.</value>
         public RegisterUserViewModel ViewModel { get; } = new RegisterUserViewModel();
         public MainViewModel MainViewModel { get; } = new MainViewModel();
 
+        /// <summary>The naming pattern</summary>
         private readonly string namingPattern = @"^[/a-zA-Z]+${1,30}";
+        /// <summary>The phone number pattern</summary>
         private readonly string phoneNumberPattern = "^[0-9]+$";
+        /// <summary>The email pattern</summary>
         private readonly string emailPattern = @"[A-Za-z0-9@.-]+${1,15}";
+        /// <summary>The user name pattern</summary>
         private readonly string userNamePattern = @"^[A-Za-z0-9]{1,15}$";
+        /// <summary>The password pattern</summary>
         private readonly string passwordPattern = @"^[A-Za-z0-9]{1,15}$";
 
 
 
+        /// <summary>The valid firstname</summary>
         private bool validFirstname;
+        /// <summary>The valid lastname</summary>
         private bool validLastname;
+        /// <summary>The valid telephone number</summary>
         private bool validTelephoneNumber;
+        /// <summary>The valid email</summary>
         private bool validEmail;
+        /// <summary>The valid username</summary>
         private bool validUsername;
+        /// <summary>The valid password</summary>
         private bool validPassword;
 
 
@@ -46,15 +60,20 @@ namespace CustomerApplication.GUI.Views
             Loaded += RegisterUserPage_Loaded;
         }
 
+        /// <summary>Handles the Loaded event of the RegisterUserPage control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="Windows.UI.Xaml.RoutedEventArgs" /> instance containing the event data.</param>
         private async void RegisterUserPage_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             await MainViewModel.CheckForInternetError();
             await ViewModel.CheckIfCompaniesExsist();
         }
 
+        /// <summary>Handles the Click event of the Button control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="Windows.UI.Xaml.RoutedEventArgs" /> instance containing the event data.</param>
         private async void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-
 
             try
             {
@@ -129,6 +148,9 @@ namespace CustomerApplication.GUI.Views
             Windows.UI.Xaml.Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Arrow, 1);
         }
 
+        /// <summary>Handles the TextChanged event of the TxtFirstName control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="TextChangedEventArgs" /> instance containing the event data.</param>
         private void TxtFirstName_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -146,6 +168,9 @@ namespace CustomerApplication.GUI.Views
 
         }
 
+        /// <summary>Handles the TextChanged event of the TxtLastName control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="TextChangedEventArgs" /> instance containing the event data.</param>
         private void TxtLastName_TextChanged(object sender, TextChangedEventArgs e)
         {
             validLastname = Regex.IsMatch(txtLastName.Text, namingPattern);
@@ -164,6 +189,9 @@ namespace CustomerApplication.GUI.Views
 
         }
 
+        /// <summary>Handles the Changed event of the PhoneNumber control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="TextChangedEventArgs" /> instance containing the event data.</param>
         private void PhoneNumber_Changed(object sender, TextChangedEventArgs e)
         {
             validTelephoneNumber = Regex.IsMatch(txtPhoneNumber.Text, phoneNumberPattern);
@@ -183,6 +211,9 @@ namespace CustomerApplication.GUI.Views
 
         }
 
+        /// <summary>Handles the TextChanged event of the TxtEmail control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="TextChangedEventArgs" /> instance containing the event data.</param>
         private void TxtEmail_TextChanged(object sender, TextChangedEventArgs e)
         {
             validEmail = Regex.IsMatch(txtEmail.Text, emailPattern);
@@ -197,6 +228,9 @@ namespace CustomerApplication.GUI.Views
             }
         }
 
+        /// <summary>Handles the TextChanged event of the TxtUserName control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="TextChangedEventArgs" /> instance containing the event data.</param>
         private void TxtUserName_TextChanged(object sender, TextChangedEventArgs e)
         {
             validUsername = Regex.IsMatch(txtUserName.Text, userNamePattern);
@@ -216,6 +250,9 @@ namespace CustomerApplication.GUI.Views
 
         }
 
+        /// <summary>Handles the PasswordChanged event of the TxtPasswordBox control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="Windows.UI.Xaml.RoutedEventArgs" /> instance containing the event data.</param>
         private void TxtPasswordBox_PasswordChanged(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             validPassword = Regex.IsMatch(txtPasswordBox.Password, passwordPattern);

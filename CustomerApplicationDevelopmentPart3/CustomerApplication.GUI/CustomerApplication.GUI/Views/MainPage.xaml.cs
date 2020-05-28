@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Net.Http;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading;
-using CustomerApplication.GUI.Core.Datahandler;
-using CustomerApplication.GUI.Core.DataTransferObject;
-using CustomerApplication.GUI.Core.Models;
 using CustomerApplication.GUI.ViewModels;
-using Newtonsoft.Json;
 using Windows.UI;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
@@ -17,12 +9,18 @@ namespace CustomerApplication.GUI.Views
 {
     public sealed partial class MainPage : Page
     {
+        /// <summary>The user name pattern</summary>
         private readonly string userNamePattern = @"^[A-Za-z0-9]{1,15}$";
+        /// <summary>The password pattern</summary>
         private readonly string passwordPattern = @"^[A-Za-z0-9]{1,15}$";
 
+        /// <summary>The valid username</summary>
         private bool validUsername;
+        /// <summary>The valid password</summary>
         private bool validPassword;
 
+        /// <summary>Gets the view model.</summary>
+        /// <value>The view model.</value>
         public MainViewModel ViewModel { get; } = new MainViewModel();
 
         public MainPage()
@@ -31,6 +29,9 @@ namespace CustomerApplication.GUI.Views
             Loaded += MainPage_Loaded;
         }
 
+        /// <summary>Handles the Loaded event of the MainPage control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="Windows.UI.Xaml.RoutedEventArgs" /> instance containing the event data.</param>
         private async void MainPage_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
 #pragma warning disable CA2007 // Consider calling ConfigureAwait on the awaited task
@@ -39,6 +40,9 @@ namespace CustomerApplication.GUI.Views
         }
 
 
+        /// <summary>BTNs the login.</summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="Windows.UI.Xaml.RoutedEventArgs" /> instance containing the event data.</param>
         private async void BtnLogin(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             try
@@ -74,9 +78,12 @@ namespace CustomerApplication.GUI.Views
 
             }
 
-        }   
+        }
 
-            private void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        /// <summary>Handles the Click event of the Button control that navigates you to the user page.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="Windows.UI.Xaml.RoutedEventArgs" /> instance containing the event data.</param>
+        private void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(RegisterUserPage));
         }
@@ -101,6 +108,9 @@ namespace CustomerApplication.GUI.Views
             Windows.UI.Xaml.Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Arrow, 1);
         }
 
+        /// <summary>Handles the TextChanged event of the TxtUserName control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="TextChangedEventArgs" /> instance containing the event data.</param>
         private void TxtUserName_TextChanged(object sender, TextChangedEventArgs e)
         {
             validUsername = Regex.IsMatch(txtUserName.Text, userNamePattern);
@@ -115,6 +125,9 @@ namespace CustomerApplication.GUI.Views
                 txtUserName.BorderBrush = new SolidColorBrush(Colors.Green);
         }
 
+        /// <summary>Handles the PasswordChanged event of the TxtPassword control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="Windows.UI.Xaml.RoutedEventArgs" /> instance containing the event data.</param>
         private void TxtPassword_PasswordChanged(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             validPassword = Regex.IsMatch(txtPassword.Password, passwordPattern);

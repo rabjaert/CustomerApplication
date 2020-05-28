@@ -13,13 +13,18 @@ namespace CustomerApplication.GUI.ViewModels
 {
     public class RegisterUserViewModel : Observable
     {
+        /// <summary>Gets the employees.</summary>
+        /// <value>The employees.</value>
         public ObservableCollection<Employee> Employees { get; } = new ObservableCollection<Employee>();
+        /// <summary>Gets the company view model.</summary>
+        /// <value>The company view model.</value>
         public CompanyViewModel CompanyViewModel { get; } = new CompanyViewModel();
 
         public RegisterUserViewModel()
         {
         }
 
+        /// <summary>Loads the employees asynchronous.</summary>
         internal async Task LoadEmployeesAsync()
         {
             Employees.Clear();
@@ -28,6 +33,7 @@ namespace CustomerApplication.GUI.ViewModels
                 Employees.Add(user);
         }
 
+        /// <summary>Checks if companies exsist.</summary>
         internal async Task CheckIfCompaniesExsist()
         {
             Uri countUri = new Uri("http://localhost:5000/api/Companies/GetCompanyCount");

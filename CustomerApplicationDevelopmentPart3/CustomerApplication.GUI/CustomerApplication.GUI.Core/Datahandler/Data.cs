@@ -1,26 +1,31 @@
 ﻿using CustomerApplication.GUI.Core.Models;
 using Newtonsoft.Json;
 using System;
-using System.Windows;
 using System.Collections.Generic;
-
 using System.Diagnostics;
 using System.Net.Http;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Net;
 
 namespace CustomerApplication.GUI.Core.Datahandler
 {
+    /// <summary>The data class</summary>
     public class Data
     {
 
+        /// <summary>Gets the user asynchronous.</summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="requestUri">The request URI.</param>
+        /// <returns></returns>
+        /// <exception cref="Exception">Invalid header value: " + header
+        /// or
+        /// Invalid header value: " + header</exception>
         public static async Task<T> GetUserAsync<T>(Uri requestUri)
         {
             HttpClient httpClient = new HttpClient();
             var headers = httpClient.DefaultRequestHeaders;
-           
+
             string header = "ie";
             if (!headers.UserAgent.TryParseAdd(header))
             {
@@ -62,6 +67,10 @@ namespace CustomerApplication.GUI.Core.Datahandler
         }
 
 
+        /// <summary>Registers the user.</summary>
+        /// <param name="url">The URL.</param>
+        /// <param name="UserObject">The user object.</param>
+        /// <returns></returns>
         public static async Task<bool> RegisterUser(Uri url, StringContent UserObject)
         {
             try
@@ -88,13 +97,20 @@ namespace CustomerApplication.GUI.Core.Datahandler
                 Console.WriteLine(ex);
                 return false;
             }
-            catch (WebException ex) {
+            catch (WebException ex)
+            {
 
                 Debug.WriteLine(ex);
                 return false;
             }
         }
 
+        /// <summary>Gets the count.</summary>
+        /// <param name="requestUri">The request URI.</param>
+        /// <returns></returns>
+        /// <exception cref="Exception">Invalid header value: " + header
+        /// or
+        /// Invalid header value: " + header</exception>
         public static async Task<int> GetCount(Uri requestUri)
         {
             HttpClient httpClient = new HttpClient();
@@ -135,6 +151,9 @@ namespace CustomerApplication.GUI.Core.Datahandler
         }
 
 
+        /// <summary>Updates the user.</summary>
+        /// <param name="url">The URL.</param>
+        /// <param name="UserObject">The user object.</param>
         public static async Task UpdateUser(Uri url, StringContent UserObject)
         {
             try
@@ -161,6 +180,11 @@ namespace CustomerApplication.GUI.Core.Datahandler
             }
         }
 
+        /// <summary>Logins the user.</summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="employeeUri">The employee URI.</param>
+        /// <param name="UserObject">The user object.</param>
+        /// <returns></returns>
         public static async Task<T> LoginUser<T>(Uri employeeUri, StringContent UserObject)
         {
             try
@@ -194,20 +218,24 @@ namespace CustomerApplication.GUI.Core.Datahandler
             }
         }
 
+        /// <summary>Gets the employees asynchronous.</summary>
+        /// <returns></returns>
         public static async Task<Employee[]> GetEmployeesAsync()
         {
             HttpClient httpClient = new HttpClient();
             Uri studentUri = new Uri("http://localhost:5000/Users");
 
-          
-                HttpResponseMessage result = await httpClient.GetAsync(studentUri);
-                string json = await result.Content.ReadAsStringAsync();
-                Employee[] employees = JsonConvert.DeserializeObject<Employee[]>(json);
 
-                return employees;
-          
+            HttpResponseMessage result = await httpClient.GetAsync(studentUri);
+            string json = await result.Content.ReadAsStringAsync();
+            Employee[] employees = JsonConvert.DeserializeObject<Employee[]>(json);
+
+            return employees;
+
         }
 
+        /// <summary>Gets the companies asynchronous.</summary>
+        /// <returns></returns>
         public static async Task<Company[]> GetCompaniesAsync()
         {
             HttpClient httpClient = new HttpClient();
@@ -223,6 +251,10 @@ namespace CustomerApplication.GUI.Core.Datahandler
         }
 
 
+        /// <summary>Gets the employees companies asynchronous.</summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public static async Task<IList<T>> GetEmployeesCompaniesAsync<T>(int id)
         {
             try
@@ -244,11 +276,16 @@ namespace CustomerApplication.GUI.Core.Datahandler
 
                 return studentArray;
             }
-            catch (Exception) {
+            catch (Exception)
+            {
                 return null;
             }
         }
 
+        /// <summary>Gets the inventories companies asynchronous.</summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public static async Task<IList<T>> GetInventoriesCompaniesAsync<T>(int id)
         {
             try
@@ -276,7 +313,12 @@ namespace CustomerApplication.GUI.Core.Datahandler
             }
         }
 
-        public static async Task DeleteInventory( Uri uri)
+        /// <summary>Deletes the inventory.</summary>
+        /// <param name="uri">The URI.</param>
+        /// <exception cref="Exception">Invalid header value: " + header
+        /// or
+        /// Invalid header value: " + header</exception>
+        public static async Task DeleteInventory(Uri uri)
         {
             try
             {
@@ -284,7 +326,7 @@ namespace CustomerApplication.GUI.Core.Datahandler
                 HttpClient httpClientPost = new HttpClient();
                 var headers = httpClientPost.DefaultRequestHeaders;
 
-               
+
 
                 string header = "ie";
                 if (!headers.UserAgent.TryParseAdd(header))
@@ -313,8 +355,8 @@ namespace CustomerApplication.GUI.Core.Datahandler
                 Debug.WriteLine(ex);
             }
         }
-       
 
-}
+
+    }
 }
 

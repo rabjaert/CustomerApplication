@@ -3,21 +3,11 @@ using CustomerApplication.GUI.Core.Models;
 using CustomerApplication.GUI.ViewModels;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net.Http;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,8 +19,12 @@ namespace CustomerApplication.GUI.Views
     public sealed partial class ViewEmployeesCompanyPage : Page
     {
 
-       
+
+        /// <summary>Gets the view model.</summary>
+        /// <value>The view model.</value>
         public CompanyViewModel ViewModel { get; } = new CompanyViewModel();
+        /// <summary>Gets the main view model.</summary>
+        /// <value>The main view model.</value>
         public MainViewModel MainViewModel { get; } = new MainViewModel();
 
         public ViewEmployeesCompanyPage()
@@ -39,12 +33,18 @@ namespace CustomerApplication.GUI.Views
             Loaded += ViewEmployeesCompanyPage_Loaded;
         }
 
+        /// <summary>Handles the Loaded event of the ViewEmployeesCompanyPage control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private async void ViewEmployeesCompanyPage_Loaded(object sender, RoutedEventArgs e)
         {
             await MainViewModel.CheckForInternetError();
             await ViewModel.LoadEmployeesCompaniesAsync();
         }
 
+        /// <summary>Handles the RemoveUser event of the Button control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="Windows.UI.Xaml.RoutedEventArgs" /> instance containing the event data.</param>
         private async void Button_RemoveUser(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             var testEmployee = Convert.ToInt32(ViewModel.ReadCurrentObject("currentObject"));
@@ -58,6 +58,9 @@ namespace CustomerApplication.GUI.Views
             await ViewModel.LoadEmployeesCompaniesAsync();
         }
 
+        /// <summary>Handles the CompanyList event of the Employees control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs" /> instance containing the event data.</param>
         private void Employees_CompanyList(object sender, SelectionChangedEventArgs e)
         {
             try

@@ -18,13 +18,18 @@ namespace CustomerApplication.GUI.ViewModels
 {
     public class MainViewModel : Observable
     {
+        /// <summary>Gets the view model.</summary>
+        /// <value>The view model.</value>
         public LoggedInViewModel ViewModel { get; } = new LoggedInViewModel();
+        /// <summary>Gets the employees.</summary>
+        /// <value>The employees.</value>
         public ObservableCollection<Employee> Employees { get; } = new ObservableCollection<Employee>();
 
         public MainViewModel()
         {
         }
 
+        /// <summary>Loads the employees asynchronous.</summary>
         internal async Task LoadEmployeesAsync()
         {
             Employees.Clear();
@@ -35,6 +40,10 @@ namespace CustomerApplication.GUI.ViewModels
         }
 
 
+        /// <summary>Logins the user asynchronous.</summary>
+        /// <param name="userName">Name of the user.</param>
+        /// <param name="password">The password.</param>
+        /// <returns></returns>
         internal async Task <bool> LoginUserAsync(string userName, string password)
         {
                 var OneEmployee = new UserDto()
@@ -65,6 +74,9 @@ namespace CustomerApplication.GUI.ViewModels
                
         }
 
+        /// <summary>Saves the current object.</summary>
+        /// <param name="objectName">Name of the object.</param>
+        /// <param name="objectValue">The object value.</param>
         public static void SaveCurrentObject(string objectName, string objectValue) {
 
             Windows.Storage.ApplicationDataContainer currentObject = Windows.Storage.ApplicationData.Current.LocalSettings;
@@ -72,6 +84,9 @@ namespace CustomerApplication.GUI.ViewModels
 
         }
 
+        /// <summary>Reads the current object.</summary>
+        /// <param name="objectName">Name of the object.</param>
+        /// <returns></returns>
         public string ReadCurrentObject(string objectName)
         {
 
@@ -97,6 +112,7 @@ namespace CustomerApplication.GUI.ViewModels
                 return default;
             }
         }
+        /// <summary>Checks for internet error.</summary>
         public async Task CheckForInternetError()
         {
             if (NetworkInformation.GetInternetConnectionProfile() == null)
